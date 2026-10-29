@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Cairo } from "next/font/google";
 import "./globals.css";
@@ -13,24 +13,24 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: `${site.name} - ${site.tagline}`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
-  keywords: ["قالب", "Next.js", "Tailwind", "عربي", "RTL", "تطبيقات ويب"],
+  keywords: ["بريد مؤقت", "Next.js", "Tailwind", "بريد وهمي", "RTL", "بريد إلكتروني مؤقت"],
   authors: [{ name: site.author }],
   openGraph: {
     type: "website",
     locale: "ar_SA",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} - ${site.tagline}`,
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} - ${site.tagline}`,
     description: site.description,
   },
   robots: { index: true, follow: true },
@@ -44,7 +44,7 @@ export const viewport: Viewport = {
   colorScheme: "light dark",
 };
 
-// يطبّق الوضع المحفوظ قبل أول رسم للصفحة لمنع وميض الألوان.
+// يُطبَّق الوضع المحفوظ قبل أول رسم للصفحة لمنع وميض الألوان.
 const themeScript = `(function(){try{var s=localStorage.getItem("theme");var d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;if(d)document.documentElement.classList.add("dark")}catch(e){}})();`;
 
 export default function RootLayout({ children }: { children: ReactNode }) {

@@ -3,73 +3,78 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Badge, Card, Container, SectionHeading } from "@/components/ui/layout";
 import { buttonClass } from "@/components/ui/button";
+import { TempMailApp } from "@/components/temp-mail-app";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.tagline}`,
+  title: `${site.name} - ${site.tagline}`,
   description: site.description,
 };
 
 const features = [
   {
-    title: "عربي أولاً (RTL)",
-    body: "اتجاه صحيح من الجذر، خطوط عربية محسّنة، ونصوص متوازنة على كل المقاسات.",
-    icon: "M4 6h16M4 12h10M4 18h16",
+    title: "مجاني تماماً",
+    body: "لا تسجيل، لا اشتراك، لا كلفة. أنشئ بريداً مؤقتاً في ثوانٍ واستخدمه فوراً.",
+    icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
   },
   {
-    title: "نظام تصميم موحّد",
-    body: "ألوان وخطوط وحواف ومساحات معرّفة كـ tokens في Tailwind، مع مكوّنات قابلة لإعادة الاستخدام.",
-    icon: "M12 3v18M3 12h18",
+    title: "حماية الخصوصية",
+    body: "لا تكشف بريدك الحقيقي. استخدم بريداً وهمياً للتسجيل والتحقق ثم تخلَّ عنه.",
+    icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
   },
   {
-    title: "وضع داكن حقيقي",
-    body: "تبديل فوري مع حفظ الاختيار واحترام إعدادات النظام، بدون وميض عند التحميل.",
-    icon: "M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z",
+    title: "تحديث تلقائي",
+    body: "يتم فحص الوارد كل 6 ثوانٍ تلقائياً. لا حاجة لتحديث الصفحة.",
+    icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
   },
   {
-    title: "أداء وإتاحة",
-    body: "مكوّنات خادم افتراضياً، صور محسّنة، وتباين ونقاط تركيز تلبي معايير WCAG.",
-    icon: "M13 2 3 14h7l-1 8 10-12h-7l1-8Z",
+    title: "قراءة HTML",
+    body: "اعرض محتوى الرسائل (بما فيها HTML) في إطار آمن (sandbox) لحماية جهازك.",
+    icon: "M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
   },
   {
-    title: "اختبارات جاهزة",
-    body: "Playwright يغطي الصفحة الرئيسية والاتجاه وواجهة JSON وتبديل الوضع الداكن.",
-    icon: "m9 12 2 2 4-4M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z",
+    title: "تخصيص الاسم",
+    body: "اختر اسم المستخدم الذي تريده بدلاً من العنوان العشوائي.",
+    icon: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z",
   },
   {
-    title: "نشر مجاني بضغطة",
-    body: "إعداد جاهز لـ Cloudflare Workers وGitHub Pages مع سير عمل آلي عبر GitHub Actions.",
-    icon: "M12 16V4m0 0L7 9m5-5 5 5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2",
+    title: "حذف وتحكم",
+    body: "احذف الرسائل غير المرغوب فيها وأنشئ بريداً جديداً متى شئت.",
+    icon: "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16",
   },
 ] as const;
 
 const steps = [
   {
-    title: "ابدأ من القالب",
-    body: "شغّل سكربت إنشاء المشروع، وسيُنسخ القالب باسمك وتُثبّت الحزم ويُهيّأ Git تلقائياً.",
+    title: "أنشئ بريدك",
+    body: "اضغط «بريد جديد» أو خصّص اسم المستخدم. سيتم إنشاء عنوان مؤقت فوراً.",
   },
   {
-    title: "ابنِ صفحتك",
-    body: "عدّل src/app/page.tsx وأضف صفحاتك ومكوّناتك. القواعد والأدوات جاهزة في AGENTS.md.",
+    title: "استخدمه للتسجيل",
+    body: "انسخ العنوان واستخدمه في أي موقع يتطلب تحقق بريد إلكتروني.",
   },
   {
-    title: "اختبر ثم انشر",
-    body: "شغّل pnpm test وpnpm build، ثم انشر مجاناً على Cloudflare أو GitHub Pages.",
+    title: "اقرأ الرسائل",
+    body: "ستظهر الرسائل الواردة تلقائياً. افتحها لقراءة المحتوى أو حذفها.",
   },
 ] as const;
 
 const faqs = [
   {
-    q: "هل يعمل على استضافة مجانية بالكامل؟",
-    a: "نعم. Cloudflare Workers تمنح 100 ألف طلب يومياً مجاناً، وGitHub Pages مجاني للمواقع الثابتة. لا تحتاج بطاقة ائتمان للتجربة.",
+    q: "كم مدة بقاء البريد؟",
+    a: "الرسائل تُحذف تلقائياً بعد około ساعة. البريد (الجلسة) يبقى في متصفحك حتى تنشئ بريداً جديداً أو تمسح بيانات المتصفح.",
   },
   {
-    q: "هل يمكن إضافة قاعدة بيانات؟",
-    a: "نعم، Cloudflare D1 (SQLite) أو KV أو R2 متاحة بخطة مجانية سخية، وتُربط بالمشروع عبر wrangler.jsonc.",
+    q: "هل الخدمة مجانية؟",
+    a: "نعم، مجانية تماماً بدون تسجيل. مدعومة بخدمة Guerrilla Mail (CORS مفتوح).",
   },
   {
-    q: "ماذا لو احتجت APIs وخادماً؟",
-    a: "استخدم نشر Cloudflare (OpenNext) فهو يدعم Route Handlers وServer Actions. أما GitHub Pages فهو للمحتوى الثابت فقط.",
+    q: "هل يمكنني اختيار النطاق (domain)؟",
+    a: "النطاق يُحدد تلقائياً من الخدمة (guerrillamailblock.com). يمكنك تخصيص اسم المستخدم فقط.",
+  },
+  {
+    q: "هل الرسائل آمنة؟",
+    a: "محتوى الرسائل يُعرض في إطار sandbox (بدون scripts) لحماية جهازك. لا تشارك معلومات حساسة.",
   },
 ] as const;
 
@@ -80,62 +85,51 @@ export default function HomePage() {
 
       <main id="main" className="flex-1">
         <section className="relative overflow-hidden">
-          <div className="bg-grid mask-fade-b pointer-events-none absolute inset-0 opacity-70" aria-hidden="true" />
+          <div className="bg-grid mask-fade-b pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
           <div
             className="from-brand-200/40 to-accent-400/30 pointer-events-none absolute -top-32 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-gradient-to-br blur-3xl"
             aria-hidden="true"
           />
 
-          <Container className="relative py-20 sm:py-28">
+          <Container className="relative py-16 sm:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <Badge>
                 <span className="bg-accent-500 size-2 rounded-full" aria-hidden="true" />
-                جاهز للإنتاج · Next.js 16 · Tailwind 4
+                مجاني · بدون تسجيل · فوري
               </Badge>
 
               <h1 className="text-foreground mt-6 text-4xl leading-tight font-extrabold text-balance sm:text-5xl lg:text-6xl">
-                ابنِ واجهتك العربية
+                بريد إلكتروني مؤقت
                 <span className="from-brand-600 to-accent-500 block bg-gradient-to-l bg-clip-text text-transparent">
-                  بسرعة، وبمعايير احترافية
+                  في ثوانٍ، مجاناً
                 </span>
               </h1>
 
               <p className="text-muted mx-auto mt-6 max-w-2xl text-lg leading-8">
-                قالب كامل بالعربية: تصميم متجاوب، وضع داكن، مكوّنات، اختبارات، ونشر مجاني. كل ما تحتاجه
-                لتطلق فكرتك اليوم بدل إعداد الأدوات.
+                أنشئ بريداً إلكترونياً مؤقتاً ووهمياً لتلقي رسائل التحقق والتسجيل دون كشف
+                بريدك الحقيقي. بدون تسجيل، بدون كلفة، مع تحديث تلقائي للوارد.
               </p>
 
-              <div id="start" className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <a href="#features" className={buttonClass("primary", "lg")}>
-                  استكشف المزايا
+              <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <a href="#start" className={buttonClass("primary", "lg")}>
+                  ابدأ الآن
                 </a>
-                <a href={site.links.docs} className={buttonClass("secondary", "lg")}>
-                  اقرأ التوثيق
+                <a href="#how" className={buttonClass("secondary", "lg")}>
+                  كيف يعمل؟
                 </a>
               </div>
-
-              <dl className="mt-14 grid grid-cols-3 gap-4 sm:gap-8">
-                {[
-                  { label: "زمن التحميل", value: "< 1s" },
-                  { label: "تقييم الإتاحة", value: "100" },
-                  { label: "تكلفة النشر", value: "0 ر.س" },
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <dt className="text-muted text-xs sm:text-sm">{stat.label}</dt>
-                    <dd className="text-foreground mt-1 text-2xl font-extrabold sm:text-3xl">{stat.value}</dd>
-                  </div>
-                ))}
-              </dl>
             </div>
           </Container>
         </section>
 
+        <TempMailApp />
+
         <section id="features" className="scroll-mt-24 py-20">
           <Container>
             <SectionHeading
-              eyebrow="المزايا"
-              title="أساس متين لكل مشروع"
-              description="كل ميزة هنا مختبرة وتعمل، وليست مجرد كود نموذجي. انسخ الأساس وابنِ فوقه."
+              eyebrow="المميزات"
+              title="كل ما تحتاجه في مكان واحد"
+              description="خدمة بسيطة وسريعة لحماية خصوصيتك عند التسجيل في المواقع."
             />
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -160,12 +154,12 @@ export default function HomePage() {
           </Container>
         </section>
 
-        <section id="steps" className="border-border-subtle scroll-mt-24 border-y py-20">
+        <section id="how" className="border-border-subtle scroll-mt-24 border-y py-20">
           <Container>
             <SectionHeading
-              eyebrow="كيف تبدأ"
-              title="ثلاث خطوات فقط"
-              description="من الفكرة إلى رابط يعمل ومشاركته مع العالم، دون تعقيد."
+              eyebrow="كيف يعمل"
+              title="ثلاث خطوات بسيطة"
+              description="أنشئ، استخدم، اقرأ. كل ذلك في بضع ثوانٍ."
             />
 
             <ol className="mt-12 grid gap-5 md:grid-cols-3">
@@ -186,7 +180,11 @@ export default function HomePage() {
 
         <section id="faq" className="scroll-mt-24 py-20">
           <Container className="max-w-3xl">
-            <SectionHeading eyebrow="الأسئلة الشائعة" title="إجابات سريعة" description="أهم ما يُسأل قبل الانطلاق." />
+            <SectionHeading
+              eyebrow="أسئلة شائعة"
+              title="لديك أسئلة؟"
+              description="إجابات على أكثر الاستفسارات شيوعاً."
+            />
 
             <div className="divide-border-subtle card-surface mt-10 divide-y overflow-hidden">
               {faqs.map((faq) => (
@@ -200,34 +198,6 @@ export default function HomePage() {
                   <p className="text-muted mt-3 text-sm leading-7">{faq.a}</p>
                 </details>
               ))}
-            </div>
-          </Container>
-        </section>
-
-        <section className="pb-20">
-          <Container>
-            <div className="from-brand-700 to-brand-900 relative overflow-hidden rounded-3xl bg-gradient-to-l px-6 py-14 text-center text-white">
-              <div className="bg-grid absolute inset-0 opacity-30" aria-hidden="true" />
-              <div className="relative mx-auto max-w-2xl">
-                <h2 className="text-3xl font-extrabold text-balance sm:text-4xl">جاهز لتبدأ مشروعك؟</h2>
-                <p className="mt-4 text-base leading-7 text-indigo-100">
-                  كل الأدوات مثبّتة، والقالب جاهز. أنشئ مشروعك الأول الآن وانشره مجاناً.
-                </p>
-                <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                  <a
-                    href="#start"
-                    className="text-brand-700 inline-flex h-12 items-center justify-center rounded-xl bg-white px-6 font-semibold transition-colors hover:bg-indigo-50"
-                  >
-                    ابدأ الآن
-                  </a>
-                  <a
-                    href={site.links.github}
-                    className="inline-flex h-12 items-center justify-center rounded-xl border border-white/30 px-6 font-semibold text-white transition-colors hover:bg-white/10"
-                  >
-                    شاهد على GitHub
-                  </a>
-                </div>
-              </div>
             </div>
           </Container>
         </section>

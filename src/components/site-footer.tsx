@@ -12,13 +12,13 @@ export function SiteFooter() {
 
         <nav aria-label="روابط التذييل" className="flex flex-wrap items-center justify-center gap-4 text-sm">
           <a href="#features" className="text-muted hover:text-brand-600 transition-colors">
-            المزايا
+            المميزات
           </a>
-          <a href={site.links.docs} className="text-muted hover:text-brand-600 transition-colors">
-            التوثيق
+          <a href="#how" className="text-muted hover:text-brand-600 transition-colors">
+            كيف يعمل
           </a>
-          <a href={site.links.github} className="text-muted hover:text-brand-600 transition-colors">
-            GitHub
+          <a href="#faq" className="text-muted hover:text-brand-600 transition-colors">
+            الأسئلة
           </a>
         </nav>
 

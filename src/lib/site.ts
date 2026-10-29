@@ -1,14 +1,14 @@
 export const site = {
-  name: "منصّة البداية",
-  nameEn: "Starter",
-  tagline: "قالب عربي جاهز للإنتاج",
+  name: "بريد مؤقت",
+  nameEn: "TempMail",
+  tagline: "بريد إلكتروني مؤقت ومجاني في ثوانٍ",
   description:
-    "قالب Next.js وTailwind CSS عربي بالكامل (RTL) مع وضع داكن، مكوّنات واجهة، اختبارات Playwright، ونشر مجاني على Cloudflare وGitHub Pages.",
+    "أنشئ بريداً إلكترونياً مؤقتاً ووهمياً مجاناً لتلقي رسائل التحقق والتسجيل دون كشف بريدك الحقيقي. بدون تسجيل، بدون كلفة.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  author: "فريق البداية",
+  author: "بريد مؤقت",
   nav: [
-    { label: "المزايا", href: "#features" },
-    { label: "كيف تبدأ", href: "#steps" },
+    { label: "كيف يعمل", href: "#how" },
+    { label: "المميزات", href: "#features" },
     { label: "الأسئلة", href: "#faq" },
   ],
   links: {

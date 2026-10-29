@@ -1,5 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+  "account_id": "06d4e9f4007c63a41b79b557d6acc764",
   "name": "tempmail-static",
   "compatibility_date": "2026-10-01",
   "assets": {
